@@ -16,9 +16,6 @@
       "default": "Apple",
       "required": true
     },
-    "Description": {
-      "type": "blocks"
-    },
     "Price": {
       "type": "decimal"
     },
@@ -41,6 +38,16 @@
       "relation": "manyToMany",
       "target": "api::badge.badge",
       "mappedBy": "products"
+    },
+    "variants": {
+      "type": "component",
+      "component": "product.product-variant",
+      "repeatable": true
+    },
+    "FAQs": {
+      "type": "component",
+      "component": "product.specification",
+      "repeatable": true
     }
   }
 }

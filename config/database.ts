@@ -1,23 +1,23 @@
 import path from 'path';
 
-export default ({ env }) => {
+export default ({ env }: { env: any }) => {
   const connectionString = env('DATABASE_URL');
 
-  if (connectionString) {
-    // PRODUCTION: Use the Connection String (Render)
+  // PROD: Use PostgreSQL (Render)
+  if (connectionString && process.env.NODE_ENV === 'production') {
     return {
       connection: {
         client: 'postgres',
         connection: {
           connectionString,
-          ssl: { rejectUnauthorized: false }, // REQUIRED for Render
+          ssl: { rejectUnauthorized: false }, // Required for Render Postgres
         },
         debug: false,
       },
     };
   }
 
-  // DEVELOPMENT: Use SQLite (Local)
+  // DEV: Use SQLite (Local)
   return {
     connection: {
       client: 'sqlite',
