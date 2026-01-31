@@ -1,0 +1,32 @@
+{
+    "collectionName": "components_product_product_variants",
+    "info": {
+        "displayName": "Product Variant"
+    },
+    "options": {},
+    "attributes": {
+        "Type": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "text"
+        },
+        "variantImage": {
+            "type": "media",
+            "multiple": false,
+            "allowedTypes": [
+                "images",
+                "files",
+                "videos",
+                "audios"
+            ]
+        },
+        "Label": {
+            "type": "text"
+        },
+        "Value": {
+            "type": "text"
+        }
+    },
+    "config": {}
+}
